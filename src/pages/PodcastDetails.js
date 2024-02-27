@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Common2/Header'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { collection, doc, getDoc, onSnapshot, query } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 import { toast } from 'react-toastify';
 import Button from '../components/Common2/Button';
 import EpisodeDetails from '../components/podcasts/EpisodeDetails';
 import AudioPlayer from '../components/podcasts/AudioPlayer';
+import WebShare from '../components/webShare/WebShare';
+import Genres from '../components/genres/Genres';
 
-const PodcastDetailsPage = () => {
+const PodcastDetailsPage = ({setFlag}) => {
+
+  const location = useLocation();
 
     const {id} = useParams();
     const navigate = useNavigate();
@@ -62,10 +66,14 @@ const PodcastDetailsPage = () => {
     // };
   }, [id]);
 
+  useEffect(() => {
+    setFlag(false);
+}, [location])
+
   return (
     <div>
       <Header />
-      <div className="input-wrapper" style={{ marginTop: "0rem" }}>
+      <div className="podcast-wrapper" style={{ marginTop: "0rem" }}>
         {podcast.id && (
           <>
             <div
@@ -77,15 +85,25 @@ const PodcastDetailsPage = () => {
                 margin: "1rem",
               }}
             >
-              <h1 className="podcast-title-heading">{podcast.title}</h1>
+              <div className="headingLeft">
+                  <h1 className="podcast-title-heading" style={{marginBottom: "0"}}>{podcast.title}</h1>
+                  <Genres genres={podcast.genres}/>
+              </div>
               {podcast.createdBy == auth.currentUser.uid && (
-                <Button
-                  width={"200px"}
+               <div className='create-share'> 
+                 <Button
                   text={"Create Episode"}
+                  style={{width:"200px"}}
                   onClick={() => {
                     navigate(`/podcast/${id}/create-episode`);
                   }}
                 />
+                <WebShare 
+                title={podcast.title}
+                text={podcast.description}
+                url ={" https://podpulse-rho.vercel.app/podcast/${id}"}
+                />
+               </div>
               )}
             </div>
 
@@ -93,25 +111,29 @@ const PodcastDetailsPage = () => {
               <img src={podcast.bannerImage} />
             </div>
             <p className="podcast-description">{podcast.description}</p>
-            <h1 className="podcast-title-heading ">Episodes</h1>
-            {episodes.length > 0 ? (
-              <>
-                {episodes.map((episode, index) => {
-                  return (
-                    <EpisodeDetails
-                      key={index}
-                      index={index + 1}
-                      title={episode.title}
-                      description={episode.description}
-                      audioFile={episode.audioFile}
-                      onClick={(file) => setPlayingFile(file)}
-                    />
-                  );
-                })}
-              </>
-            ) : (
-              <p>No Episodes</p>
-            )}
+            <h1 className="podcast-title-heading " style={{marginBottom: "0"}}>Episodes</h1>
+            <div className='episode-container'>
+                {episodes.length > 0 ? (
+                  <>
+                    {episodes.map((episode, index) => {
+                      return (
+                        <EpisodeDetails
+                          key={index}
+                          index={index + 1}
+                          title={episode.title}
+                          description={episode.description}
+                          audioFile={episode.audioFile}
+                          setPlayingFile={setPlayingFile}
+                          playingFile={playingFile}
+                          
+                        />
+                      );
+                    })}
+                  </>
+                ) : (
+                  <p>No Episodes</p>
+                )}
+            </div>
           </>
         )}
       </div>

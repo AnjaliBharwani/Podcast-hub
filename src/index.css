@@ -13,6 +13,7 @@
   --purple-grey: #8f8297;
   --modal: #310a47;
   --player: rgb(68, 10, 105);
+  --card-2: linear-gradient(177.7deg, rgba(58, 129, 191) 1.63%, rgba(65, 48, 90) 148.18%);
 }
 
 body {
@@ -30,6 +31,22 @@ input {
 a { 
   text-decoration: none;
 }
+.headingLeft{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+}
+.headingLeft .genres{
+  position: static;
+  flex-direction: row;
+  gap: .5rem;
+
+  /* background-color: var(--modal); */
+}
+.headingLeft .genre{
+  background: var(--card-2);
+}
 
 .input-wrapper {
   width: 80vw;
@@ -39,6 +56,18 @@ a {
   align-items: center;
   margin: 0 auto;
   margin-top: 2rem;
+  /* gap: .5rem; */
+  /* width: 100%; */
+}
+.podcast-wrapper {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+  gap: 2rem;
   /* width: 100%; */
 }
 
@@ -50,7 +79,20 @@ a {
 }
 
 .input-wrapper p{
-  color: blue;
+  color: rgb(117, 117, 255);
+}
+/* .input-wrapper .custom-button{
+ height: 10rem;
+
+} */
+.create-share{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+}
+.create-share svg{
+  font-size: 2rem;
 }
 
 .podcasts-flex {
@@ -99,7 +141,13 @@ a {
   margin: 0 auto;
   border: 5px solid white;
 }
-
+.episode-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* border: 2px solid red; */
+  width: 100%;
+}
 .profile-image {
   width: 100%;
   height: auto;

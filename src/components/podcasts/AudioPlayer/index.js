@@ -10,6 +10,13 @@ function AudioPlayer({ audioSrc, image }) {
   const [volume, setVolume] = useState(1);
   const audioRef = useRef();
 
+  useEffect(()=>{
+    if(audioSrc){
+      setIsPlaying(true)
+      audioRef.current.play();
+    }
+  },[audioSrc])
+
   const handleDuration = (e) => {
     setCurrentTime(e.target.value);
     audioRef.current.currentTime = e.target.value;
@@ -18,8 +25,10 @@ function AudioPlayer({ audioSrc, image }) {
   const togglePlay = () => {
     if (isPlaying) {
       setIsPlaying(false);
+      audioRef.current.pause();
     } else {
       setIsPlaying(true);
+      audioRef.current.play();
     }
   };
 
@@ -68,13 +77,13 @@ function AudioPlayer({ audioSrc, image }) {
     setIsPlaying(false);
   };
 
-  useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-  }, [isPlaying]);
+  // useEffect(() => {
+  //   if (isPlaying) {
+  //     audioRef.current.play();
+  //   } else {
+  //     audioRef.current.pause();
+  //   }
+  // }, [isPlaying]);
 
   useEffect(() => {
     if (!isMute) {

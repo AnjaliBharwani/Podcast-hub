@@ -7,19 +7,24 @@ import { toast } from 'react-toastify';
 import { auth } from '../firebase';
 import Loader from '../components/Common2/Loader';
 import UpdateModal from '../components/updateModal/UpdateModal';
+import { useLocation } from 'react-router-dom';
 // import "/src/index.css"
 // import React, { useEffect, useState } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
-const Profile = () => {
+const Profile = ({setFlag}) => {
+
   
+  const location = useLocation();
   const [showModal, setShowModal]= useState(false);
   const user = useSelector((state)=>state.user.user);
   console.log("My user", user);
 
-  if(!user){
-    return <Loader/>
-  }
+  useEffect(() => {
+    setFlag(false);
+}, [location])
+
+  
 
   const handleLogout = () => {
     signOut(auth)
@@ -33,6 +38,11 @@ const Profile = () => {
   const handleEditProfile = () =>{
     setShowModal(true);
   }
+    
+  if(!user){
+    return <Loader/>
+  }
+   
 
   return (
     <div>

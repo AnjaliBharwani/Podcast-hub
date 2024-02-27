@@ -2,18 +2,21 @@ import React, { useEffect, useState } from 'react'
 import "./style.css"
 import welcomeBanner from "../assets/banner-img3.png"
 
-const Welcome = () => {
+const Welcome = ({setFlag}) => {
     // const progressBar = useRef();
     const [percent, setPercent] = useState(0);
+    const [counter, setCounter] = useState(0);
 
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            setPercent(prev =>{
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCounter(prev => {
                 let next = prev+1;
-                if(next === 100) clearInterval(interval)
-                return next<=100? next:100;
+                if(next>=20) setPercent((next-20)<=100?(next-20):100);
+                if(next === 150) setFlag(false);
+                return next;
             })
-        }, 20)
+        }, 25)
+
         return () => clearInterval(interval)
     }, [])
 

@@ -4,10 +4,11 @@ import Header from "../components/Common2/Header";
 // import Button from "../components/Common2/Button";
 import SignupForm from "../components/SignupComponents/SignupForm/index";
 import LoginForm from "../components/SignupComponents/LoginForm";
+import Welcome from "../components/welcomePage/Welcome";
 
-const SignUpPage = () => {
+const SignUpPage = ({setWelcomeFlag, welcomeFlag}) => {
   
-  const [flag, setFlag] = useState(false);
+  const [flag, setFlag] = useState(true);
 
   return (
     <div>
@@ -25,6 +26,7 @@ const SignUpPage = () => {
           </p>
         )}
       </div>
+      {welcomeFlag && <Welcome setFlag={setWelcomeFlag} />}
     </div>
   );
 };

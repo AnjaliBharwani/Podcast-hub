@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Common2/Header'
 import CreateAPodcastForm from '../components/StartAPodcast/CreateAPodcastForm'
+import { useLocation } from 'react-router-dom'
 
-const CreateAPodcastPage = () => {
+const CreateAPodcastPage = ({setFlag}) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    setFlag(false);
+}, [location])
+
   return (
     <div>
         <Header/>

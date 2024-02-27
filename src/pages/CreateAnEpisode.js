@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Common2/Header'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { auth, db, storage } from '../firebase';
@@ -10,7 +10,8 @@ import InputComponent from '../components/Common2/Input';
 import Button from '../components/Common2/Button';
 import FileInput from '../components/Common2/Input/FileInput';
 
-function CreateAnEpisodePage() {
+function CreateAnEpisodePage({setFlag}) {
+    const location = useLocation();
     const { id } = useParams();
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
@@ -58,6 +59,9 @@ function CreateAnEpisodePage() {
         setLoading(false);
       }
     };
+    useEffect(() => {
+      setFlag(false);
+  }, [location])
   
     return (
       <div>

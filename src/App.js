@@ -27,11 +27,11 @@ function App() {
     const dispatch = useDispatch();
     const [flag, setFlag] = useState(true);
 
-    useEffect(()=>{
-      setTimeout(()=>{
-        setFlag(false);
-      }, 2800)
-    }, [])
+    // useEffect(()=>{
+    //   setTimeout(()=>{
+    //     setFlag(false);
+    //   }, 2800)
+    // }, [])
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -106,18 +106,18 @@ function App() {
       <ToastContainer/>
       <Router>
         <Routes>
-          <Route path="/" element={<SignUpPage />} />
+          <Route path="/" element={<SignUpPage setWelcomeFlag={setFlag} welcomeFlag={flag}/>} />
           <Route element={<PrivateRoutes />}>
-              <Route path="/profile" element={<Profile />}/> 
-              <Route path="/create-a-podcast" element={<CreateAPodcastPage />}/> 
-              <Route path="/podcasts" element={<PodcastsPage />}/> 
-              <Route path="/podcast/:id" element={<PodcastDetailsPage />}/> 
-              <Route path="/podcast/:id/create-episode" element={<CreateAnEpisodePage />}/>  
+              <Route path="/profile" element={<Profile setFlag={setFlag}/>}/> 
+              <Route path="/create-a-podcast" element={<CreateAPodcastPage setFlag={setFlag} />}/> 
+              <Route path="/podcasts" element={<PodcastsPage setFlag={setFlag} />}/> 
+              <Route path="/podcast/:id" element={<PodcastDetailsPage setFlag={setFlag} />}/> 
+              <Route path="/podcast/:id/create-episode" element={<CreateAnEpisodePage setFlag={setFlag} />}/>  
           </Route>
            
         </Routes>
       </Router>
-      {flag && <Welcome/>}
+      {/* {flag && <Welcome setFlag={setFlag}/>} */}
       
     </div>
   );

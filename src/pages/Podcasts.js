@@ -7,9 +7,11 @@ import { db } from "../firebase";
 import InputComponent from "../components/Common2/Input";
 import PodcastCard from "../components/podcasts/PodcastCard";
 import MultiSelect from "../components/MultiSelect/Multiselect";
+import { useLocation } from "react-router-dom";
 
-function PodcastsPage() {
+function PodcastsPage({setFlag}) {
   const dispatch = useDispatch();
+  const location = useLocation();
   const podcasts = useSelector((state) => state.podcasts.podcasts);
   const [search, setSearch] = useState("");
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -51,6 +53,10 @@ function PodcastsPage() {
 
     return titleMatch && genreMatch;
 });
+
+    useEffect(() => {
+      setFlag(false);
+    }, [location])
 
   return (
     <div>

@@ -1,0 +1,15 @@
+.episode .custom-button{
+    width: 20rem;
+}
+
+.episode{
+    background-color: var(--modal);
+    border-radius: 1rem;
+    padding: 1rem;
+    /* gap: 10px; */
+    /* width: 200px; */
+    /* height: 200px; */
+}
+.episode1{
+    gap: 1rem;
+}
