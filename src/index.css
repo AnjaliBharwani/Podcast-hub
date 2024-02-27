@@ -1,13 +1,137 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --theme: #20062e;
+  --theme2: rgb(50, 29, 93);
+  --blue: #18b2de;
+  --white: #fff;
+  --grey: #d7d7d7;
+  --purple-grey: #8f8297;
+  --modal: #310a47;
+  --player: rgb(68, 10, 105);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--theme);
+  color: var(--white);
+}
+
+input {
+  font-family: "Inter", sans-serif;
+}
+a { 
+  text-decoration: none;
+}
+
+.input-wrapper {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+  /* width: 100%; */
+}
+
+.input-wrapper h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.input-wrapper p{
+  color: blue;
+}
+
+.podcasts-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.podcast-title-heading {
+  text-align: left !important;
+  width: 100%;
+}
+
+.banner-wrapper {
+  background: linear-gradient(
+    177.7deg,
+    rgba(58, 129, 191, 0.3) 1.63%,
+    rgba(65, 48, 90, 0.009) 148.18%
+  );
+  border-radius: 1rem;
+  padding: 0.5rem;
+  height: 300px;
+  width: 100%;
+}
+
+.banner-wrapper img {
+  width: 100%;
+  height: 300px !important;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.podcast-description {
+  color: var(--purple-grey);
+  text-align: left;
+  width: 100%;
+}
+
+.profile-image-container {
+  margin: 40px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%; /* This makes the container round */
+  margin: 0 auto;
+  border: 5px solid white;
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* This makes the image round */
+}
+  
+.profile-btn{
+  display: flex;
+  max-width:80%;
+  /* flex-direction: column; */
+  justify-content: center;
+  /* align-self: auto; */
+}
+.profile-wrapper{
+  width: 35rem;
+  max-width: 90%;
+  height: 70vh;
+  /* border: 2px solid white; */
+  background-color: var(--modal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  margin-top: 4rem;
+  padding: 40px;
+  gap: 30px;
+  border-radius: 20px;
+}
+.text{
+  text-align: center;
+  color: blue;
+  padding-bottom: 10px;
+  cursor: pointer;
 }
