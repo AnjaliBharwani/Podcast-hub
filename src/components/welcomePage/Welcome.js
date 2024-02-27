@@ -25,7 +25,7 @@ const Welcome = ({setFlag}) => {
         <div className="welcome-container">
             <img src={welcomeBanner} alt="welcomImage" />
             <h1 className="welcome-msg">Welcom To PodCast</h1>
-            <p className='intro'>You can create, listen, discover, and be inspired.</p>
+            <p className='intro'>You Can Create, Listen, discover, and Share Podcasts.</p>
             <div className="progress">
                 <div className="progress-track">
                     <div  className="progress-bar" style={{width: `${percent}%`}}></div>
