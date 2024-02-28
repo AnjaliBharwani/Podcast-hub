@@ -59,7 +59,7 @@ function PodcastsPage({setFlag}) {
     }, [location])
 
   return (
-    <div>
+    <div className="main-container">
       <Header />
       <div className="input-wrapper" style={{ marginTop: "2rem" }}>
         <h1>Discover Podcasts</h1>

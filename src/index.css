@@ -7,6 +7,7 @@
 :root {
   --theme: #20062e;
   --theme2: rgb(50, 29, 93);
+  --bar: rgb(133, 100, 199);
   --blue: #18b2de;
   --white: #fff;
   --grey: #d7d7d7;
@@ -30,6 +31,21 @@ input {
 }
 a { 
   text-decoration: none;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+.sign-up-wrapper{
+  flex: 1;
+  padding-bottom: 8rem;
+
+}
+.create-podcast-wrapper{
+  flex: 1;
+  padding-bottom: 2rem;
 }
 .headingLeft{
   display: flex;
@@ -80,6 +96,7 @@ a {
 
 .input-wrapper p{
   color: rgb(117, 117, 255);
+  text-align: center;
 }
 /* .input-wrapper .custom-button{
  height: 10rem;
@@ -173,7 +190,7 @@ a {
   align-items: center;
   margin: 20px auto;
   margin-top: 4rem;
-  padding: 40px;
+  /* padding: 40px; */
   gap: 30px;
   border-radius: 20px;
 }
@@ -183,3 +200,21 @@ a {
   padding-bottom: 10px;
   cursor: pointer;
 }
+
+@media (max-width: 768px){
+  html{
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px){
+  html{
+    font-size: 12px;
+  }
+}
+@media (max-width: 400px){
+  html{
+    font-size: 11px;
+  }
+}
+
+  

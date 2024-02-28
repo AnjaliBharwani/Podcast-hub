@@ -45,7 +45,7 @@ const Profile = ({setFlag}) => {
    
 
   return (
-    <div>
+    <div className="main-container">
       <Header/> 
       <div className='profile-wrapper'>
       {user.image && (
@@ -53,7 +53,7 @@ const Profile = ({setFlag}) => {
           <img src={user.image} alt="Profile" className="profile-image" />
         </div>
       )}
-      <h1>Welcome {user.name}</h1>
+      <h1 style={{textAlign:"center"}}>Welcome <br/>{user.name}</h1>
       
       <div className='profile-btn'>
       <Button text={"Logout"} onClick={handleLogout}/>

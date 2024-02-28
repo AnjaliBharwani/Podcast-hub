@@ -64,7 +64,7 @@ function CreateAnEpisodePage({setFlag}) {
   }, [location])
   
     return (
-      <div>
+      <div className="main-container">
         <Header />
         <div className="input-wrapper">
           <h1>Create An Episode</h1>

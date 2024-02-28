@@ -11,9 +11,9 @@ const CreateAPodcastPage = ({setFlag}) => {
 }, [location])
 
   return (
-    <div>
+    <div className="main-container">
         <Header/>
-        <div className='input-wrapper'>
+        <div className='input-wrapper create-podcast-wrapper'>
             <h1>Create A Podcast</h1>
             <CreateAPodcastForm/>
         </div>

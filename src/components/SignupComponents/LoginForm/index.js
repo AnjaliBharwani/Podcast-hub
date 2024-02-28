@@ -79,7 +79,8 @@ const LoginForm = () => {
   return (
     <>
       {flag ? (
-        <div>
+        <div className="login-wrapper">
+          <h1>Sign In</h1>
           <InputComponent
             type="text"
             placeholder="Email"
@@ -91,7 +92,7 @@ const LoginForm = () => {
             state={password}
             setState={setPassword}
             placeholder="Password"
-            type="text"
+            type="password"
             required={true}
           />
 

@@ -99,6 +99,7 @@
 
     return (
       <div>
+        <h1>Sign Up</h1>
         <InputComponent
           state={fullName}
           setState={setFullName}

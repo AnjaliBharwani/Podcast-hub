@@ -71,7 +71,7 @@ const PodcastDetailsPage = ({setFlag}) => {
 }, [location])
 
   return (
-    <div>
+    <div className="main-container">
       <Header />
       <div className="podcast-wrapper" style={{ marginTop: "0rem" }}>
         {podcast.id && (
