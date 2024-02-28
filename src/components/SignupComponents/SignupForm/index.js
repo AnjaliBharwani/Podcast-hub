@@ -41,7 +41,6 @@
             // profileImage
           );
           const user = userCredential.user;
-          console.log("user", user);
 
           // Upload profile image to Firebase Storage
           const profileImageRef = ref(
@@ -77,7 +76,6 @@
 
           navigate("/profile");
         } catch (e) {
-          console.log("error", e);
           toast.error(e.message);
           setLoading(false);
         }

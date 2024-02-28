@@ -167,6 +167,7 @@ a {
   gap: 1rem;
   /* border: 2px solid red; */
   width: 100%;
+  padding-bottom: 1.5rem;
 }
 .profile-image {
   width: 100%;

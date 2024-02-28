@@ -20,7 +20,6 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    console.log("handling Login");
     setLoading(true);
 
     if (email && password) {
@@ -36,7 +35,6 @@ const LoginForm = () => {
 
         const userDoc = await getDoc(doc(db, "users", user.uid));
         const userData = userDoc.data();
-        console.log("userData", userData);
 
         dispatch(
           setUser({
@@ -50,7 +48,6 @@ const LoginForm = () => {
         setLoading(false);
         navigate("/profile");
       } catch (error) {
-        console.log("Error signing in:", error);
         setLoading(false);
         toast.error(error.message);
       }

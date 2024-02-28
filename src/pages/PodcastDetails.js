@@ -20,7 +20,6 @@ const PodcastDetailsPage = ({setFlag}) => {
   const [episodes, setEpisodes] = useState([]);
   const [playingFile, setPlayingFile] = useState("");
 
-  console.log("ID", id);
   useEffect(() => {
     if (id) {
       getData();
@@ -33,7 +32,6 @@ const PodcastDetailsPage = ({setFlag}) => {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
         setPodcast({ id: id, ...docSnap.data() });
       } else {
         // docSnap.data() will be undefined in this case

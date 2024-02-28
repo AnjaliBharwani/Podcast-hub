@@ -73,7 +73,6 @@ function CreatePodcastForm() {
         navigate("/podcasts");
       } catch (e) {
         toast.error(e.message);
-        console.log(e);
         setLoading(false);
       }
 

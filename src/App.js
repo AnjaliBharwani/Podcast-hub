@@ -48,7 +48,6 @@ function App() {
 
                 // Update podcasts according to the auth
                 const podcastsCollectionRef = collection(db, "podcasts");
-                console.log(podcastsCollectionRef);
                 const podcastsData = await getDocs(podcastsCollectionRef);
                 const podcasts = [];
                 podcastsData.forEach(doc => {
@@ -62,44 +61,6 @@ function App() {
 
         return fetchUserData;
     }, [user])
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       const unsubscribeSnapshot = onSnapshot(
-  //         doc(db, "users", user.uid),
-  //         (userDoc) => {
-  //           if (userDoc.exists()) {
-              
-  //             const userData = userDoc.data();
-  //             dispatch 
-              
-  //              (
-  //               setUser({
-  //                 name: userData.name,
-  //                 email: userData.email,
-  //                 uid: user.uid,
-  //                 profileImage : userData?.profileImage
-  //               })
-  //             );
-  //           }
-  //         },
-  //         (error) => {
-  //           console.error("Error fetching user data:", error);
-  //         }
-  //       );
-
-  //       return () => {
-  //         unsubscribeSnapshot();
-  //       };
-  //     }
-  //   });
-
-  //   return () => {
-  //     unsubscribeAuth();
-  //   };
-  // }, []); 
-
 
   return (
     <div className="App">

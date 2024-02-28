@@ -54,10 +54,6 @@ function UpdateModal({ setShowModal, user }) {
                 else{
                     const docRef = doc(db, 'users', user.uid);
         
-                    // const ProfileImageRef = ref(storage, `users/${user.uid}/${Date.now()}`);
-                    // await uploadBytes(ProfileImageRef, profileImage);
-                    // const profileImageUrl = await getDownloadURL(ProfileImageRef);
-            
                     const newData = {
                         ...user,
                         name: name,
