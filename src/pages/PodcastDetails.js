@@ -93,7 +93,7 @@ const PodcastDetailsPage = ({setFlag}) => {
                <div className='create-share'> 
                  <Button
                   text={"Create Episode"}
-                  style={{width:"200px"}}
+                  style={{width:"10rem"}}
                   onClick={() => {
                     navigate(`/podcast/${id}/create-episode`);
                   }}

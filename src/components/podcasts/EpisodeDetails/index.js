@@ -27,7 +27,7 @@ function EpisodeDetails({ index, title, description, audioFile, onClick, setPlay
             setPlayingFile(audioFile)
           }
         }}  
-        style={{width: "200px"}}
+        style={{width: "7rem"}}
       />
     </div>
   );
