@@ -1,3 +1,4 @@
+
 .welcome-page{
     width: 100%;
     height: 100vh;
@@ -18,6 +19,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    /* border: 2px solid green; */
     /* padding: 10%; */
 }
 .welcome-msg{
