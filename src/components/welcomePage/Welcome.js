@@ -26,7 +26,7 @@ const Welcome = ({setFlag}) => {
             <img src={welcomeBanner} alt="welcomImage" />
             <h1 className="welcome-msg">Welcom To PodCast-Hub</h1>
             <p className='intro'>You Can Create, Listen, discover, and Share Podcasts.</p>
-            <p className='intro'>PodZone is a webApp that lets you unleash your creativity and passion for podcasts.</p>
+            <p className='intro'>Podcast-hub is a webApp that lets you unleash your creativity and passion for podcasts.</p>
             <div className="progress">
                 <div className="progress-track">
                     <div  className="progress-bar" style={{width: `${percent}%`}}></div>
