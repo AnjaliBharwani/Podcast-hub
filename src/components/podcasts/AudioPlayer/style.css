@@ -8,10 +8,10 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    background-color: rgb(52, 10, 75);
+    background-color: rgb(52, 10, 75, 0.2);
     
   }
-  
+
   .display-image-player {
     height: 50px;
     width: 50px;

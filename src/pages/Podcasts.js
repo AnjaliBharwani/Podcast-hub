@@ -45,7 +45,7 @@ function PodcastsPage({setFlag}) {
     };
   }, [dispatch]);
 
-  console.log(podcasts);
+  // console.log(podcasts);
 
   const filteredPodcasts = podcasts.filter((podcast) => {
     const titleMatch = podcast.title.toLowerCase().includes(search.trim().toLowerCase());

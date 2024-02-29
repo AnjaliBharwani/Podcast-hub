@@ -97,7 +97,7 @@
 
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h1 className="login-text">Sign Up</h1>
         <InputComponent
           state={fullName}
           setState={setFullName}

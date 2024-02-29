@@ -77,7 +77,7 @@ const LoginForm = () => {
     <>
       {flag ? (
         <div className="login-wrapper">
-          <h1>Sign In</h1>
+          <h1 className="login-text">Sign In</h1>
           <InputComponent
             type="text"
             placeholder="Email"
@@ -103,7 +103,7 @@ const LoginForm = () => {
         </div>
       ) : (
         <div>
-          <h1>Reset Password</h1>
+          <h1 className="login-text">Reset Password</h1>
           <InputComponent
             type="text"
             placeholder="Email"

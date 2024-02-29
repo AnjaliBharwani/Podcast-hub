@@ -85,13 +85,14 @@ a {
   margin: 0 auto;
   margin-top: 2rem;
   gap: 2rem;
+  padding-bottom: 5rem;
   /* width: 100%; */
 }
 
 .input-wrapper h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 2rem;
 }
 
@@ -103,6 +104,9 @@ a {
  height: 10rem;
 
 } */
+.login-text{
+  font-weight: bold;
+}
 .create-share{
   display: flex;
   gap: 1rem;
@@ -168,6 +172,7 @@ a {
   /* border: 2px solid red; */
   width: 100%;
   padding-bottom: 1.5rem;
+  /* align-items: center; */
 }
 .profile-image {
   width: 100%;
@@ -203,6 +208,14 @@ a {
   color: blue;
   padding-bottom: 10px;
   cursor: pointer;
+}
+.podcast-list{
+  display:  flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
 }
 
 @media (max-width: 768px){

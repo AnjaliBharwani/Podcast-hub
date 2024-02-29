@@ -8,17 +8,19 @@ import { auth } from '../firebase';
 import Loader from '../components/Common2/Loader';
 import UpdateModal from '../components/updateModal/UpdateModal';
 import { useLocation } from 'react-router-dom';
+import PodcastCard from '../components/podcasts/PodcastCard';
 // import "/src/index.css"
 // import React, { useEffect, useState } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
 const Profile = ({setFlag}) => {
 
-  
+  const user = useSelector((state) => state.user.user);
   const location = useLocation();
   const [showModal, setShowModal]= useState(false);
-  const user = useSelector((state)=>state.user.user);
-  console.log("My user", user);
+  const podcasts = useSelector((state) => state.podcasts.podcasts);
+  // console.log(podcasts);
+  // console.log(user.uid)
 
   useEffect(() => {
     setFlag(false);
@@ -43,6 +45,9 @@ const Profile = ({setFlag}) => {
     return <Loader/>
   }
    
+  
+  const userPodcasts = podcasts.filter((podcast) => podcast.createdBy === user.uid)
+  console.log(userPodcasts)
 
   return (
     <div className="main-container">
@@ -60,6 +65,22 @@ const Profile = ({setFlag}) => {
       <Button text={"Edit-Profile"} onClick={handleEditProfile}/>
       </div>
       </div>
+
+      <div className="episode-container">
+        <h2>Your Podcasts:</h2>
+        <div className="podcast-list">
+          {userPodcasts.map((podcast) => (
+            <PodcastCard
+              key={podcast.id}
+              id={podcast.id}
+              title={podcast.title}
+              displayImage={podcast.displayImage}
+              genres={podcast.genres}
+            />
+          ))}
+        </div>
+      </div>
+      
       {
       showModal && <UpdateModal setShowModal={setShowModal} user={user}/>
       }
