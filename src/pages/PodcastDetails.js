@@ -19,6 +19,7 @@ const PodcastDetailsPage = ({setFlag}) => {
   const [podcast, setPodcast] = useState({});
   const [episodes, setEpisodes] = useState([]);
   const [playingFile, setPlayingFile] = useState("");
+  // const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     if (id) {
@@ -123,6 +124,7 @@ const PodcastDetailsPage = ({setFlag}) => {
                           audioFile={episode.audioFile}
                           setPlayingFile={setPlayingFile}
                           playingFile={playingFile}
+                          // isPlaying={isPlaying}
                           
                         />
                       );
@@ -136,7 +138,9 @@ const PodcastDetailsPage = ({setFlag}) => {
         )}
       </div>
       {playingFile && (
-        <AudioPlayer audioSrc={playingFile} image={podcast.displayImage} />
+        <AudioPlayer audioSrc={playingFile} image={podcast.displayImage}  
+        // setIsPlaying={setIsPlaying}
+        />
       )}
     </div>
   );

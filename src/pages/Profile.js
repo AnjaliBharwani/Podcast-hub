@@ -67,7 +67,7 @@ const Profile = ({setFlag}) => {
       </div>
 
       <div className="episode-container">
-        <h2>Your Podcasts:</h2>
+        <h2 style={{textAlign:"center" ,marginTopButton:"1.5rem"}}>Your Podcasts:</h2>
         <div className="podcast-list">
           {userPodcasts.map((podcast) => (
             <PodcastCard
