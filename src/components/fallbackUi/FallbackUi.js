@@ -1,12 +1,12 @@
-import React from 'react'
-import './style.css'
+// import React from 'react'
+// import './style.css'
 
-function FallbackUi({text, style}) {
-    return (
-        <div className='fallback-ui' style={style}>
-            <p>{text}</p>
-        </div>
-    )
-}
+// function FallbackUi({text, style}) {
+//     return (
+//         <div className='fallback-ui' style={style}>
+//             <p>{text}</p>
+//         </div>
+//     )
+// }
 
-export default FallbackUi
+// export default FallbackUi

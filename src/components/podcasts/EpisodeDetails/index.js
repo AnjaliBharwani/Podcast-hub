@@ -18,7 +18,8 @@ function EpisodeDetails({ index, title, description, audioFile, onClick, setPlay
 
       
       <Button
-        text={"Play"}
+        // text={isPlaying ? "pause" : "play"}
+        text={playingFile === audioFile ? "Pause" : "Play"}
         // text={isPlaying && playingFile === audioFile ? "Pause" : "Play"}
         onClick={() => {
           if(playingFile && playingFile === audioFile){

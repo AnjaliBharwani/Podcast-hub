@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Sbutton = ({ text, onClick, disabled }) => {
+const Button2 = ({ text, onClick, disabled }) => {
   return (
     <div onClick={onClick} className="small-custom-button" disabled={disabled}>
     {text}
@@ -8,4 +8,4 @@ const Sbutton = ({ text, onClick, disabled }) => {
   )
 }
 
-export default Sbutton
+export default Button2
